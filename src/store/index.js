@@ -8,13 +8,17 @@ export default new Vuex.Store({
     cacheNames: ['list']
   },
   mutations: {
-    setCacheNames(state, name) {
-      console.log('setCacheNames name:', name);
+    subCacheNames(state, name) {
+      console.log('subCacheNames name:', name);
       state.cacheNames.forEach((element, index) => {
         if (element === name) {
           state.cacheNames.splice(index, 1);
         }
       });
+    },
+    addCacheNames(state, name) {
+      console.log('addCacheNames name:', name);
+      state.cacheNames.push(name);
     }
   },
   actions: {},

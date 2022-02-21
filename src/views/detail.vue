@@ -1,7 +1,8 @@
 <template>
   <div>
     <h1>detail.vue</h1>
-    <button @click="change">改变</button>
+    <button @click="changeSub">去除</button>
+    <button @click="changeAdd">增加</button>
   </div>
 </template>
 
@@ -9,8 +10,11 @@
 export default {
   name: 'detail',
   methods: {
-    change() {
-      this.$store.commit('setCacheNames', 'list');
+    changeSub() {
+      this.$store.commit('subCacheNames', 'list');
+    },
+    changeAdd() {
+      this.$store.commit('addCacheNames', 'list');
     }
   },
   created() {
