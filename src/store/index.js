@@ -18,6 +18,9 @@ export default new Vuex.Store({
     },
     addCacheNames(state, name) {
       console.log('addCacheNames name:', name);
+      if (state.cacheNames.includes(name)) {
+        return;
+      }
       state.cacheNames.push(name);
     }
   },
